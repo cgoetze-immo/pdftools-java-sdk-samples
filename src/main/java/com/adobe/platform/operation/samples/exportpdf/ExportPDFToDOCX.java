@@ -48,14 +48,14 @@ public class ExportPDFToDOCX {
             ExportPDFOperation exportPdfOperation = ExportPDFOperation.createNew(ExportPDFTargetFormat.DOCX);
 
             // Set operation input from a local PDF file
-            FileRef sourceFileRef = FileRef.createFromLocalFile("src/main/resources/exportPDFInput.pdf");
+            FileRef sourceFileRef = FileRef.createFromLocalFile("src/main/resources/Mietvertrag.pdf");
             exportPdfOperation.setInput(sourceFileRef);
 
             // Execute the operation.
             FileRef result = exportPdfOperation.execute(executionContext);
 
             // Save the result to the specified location.
-            result.saveAs("output/exportPdfOutput.docx");
+            result.saveAs("output/Mietvertrag.docx");
 
         } catch (ServiceApiException | IOException | SdkException | ServiceUsageException ex) {
             LOGGER.error("Exception encountered while executing operation", ex);
